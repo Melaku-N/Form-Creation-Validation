@@ -29,12 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
       feedbackDiv.textContent = "Registration successful!";
       feedbackDiv.style.color = "#28a745";
     } else {
-      for (let message of messages) {
-        feedbackDiv.innerHTML += `${message}<br>`;
-        if (message !== messages[messages.length - 1])
-          feedbackDiv.innerHTML += "<br>";
-        feedbackDiv.style.color = "#dc3545";
-      }
+      feedbackDiv.innerHTML += messages.join("<br>");
+      feedbackDiv.style.color = "#dc3545";
     }
   });
 });
